@@ -1,0 +1,13 @@
+{
+  "name": "rentz",
+  "private": true,
+  "version": "1.0.0",
+  "description": "RentZ monorepo - run everything locally without Docker for fast testing/iteration",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix services/auth-service && npm install --prefix services/listing-service && npm install --prefix services/media-service && npm install --prefix services/location-service && npm install --prefix services/inquiry-service && npm install --prefix gateway && npm install --prefix apps/public-app && npm install --prefix apps/owner-app",
+    "dev": "concurrently -n auth,listing,media,location,inquiry,gateway,public,owner -c blue,green,yellow,magenta,cyan,white,gray,red \"npm run dev --prefix services/auth-service\" \"npm run dev --prefix services/listing-service\" \"npm run dev --prefix services/media-service\" \"npm run dev --prefix services/location-service\" \"npm run dev --prefix services/inquiry-service\" \"npm run dev --prefix gateway\" \"npm run dev --prefix apps/public-app\" \"npm run dev --prefix apps/owner-app\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

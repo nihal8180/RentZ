@@ -1,0 +1,21 @@
+{
+  "name": "rentz-public-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RentZ public site - search and browse rentals by locality (SEO-optimized)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "13.5.6"
+  }
+}

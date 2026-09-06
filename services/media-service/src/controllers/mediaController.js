@@ -4,9 +4,9 @@ function uploadImages(req, res) {
     return res.status(400).json({ message: 'No files uploaded' });
   }
 
-  const baseUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT || 5003}`;
-
-  const urls = req.files.map((file) => `${baseUrl}/uploads/${file.filename}`);
+  // multer-storage-cloudinary sets `.path` to the uploaded image's full
+  // Cloudinary URL (despite the name - it's not a local filesystem path)
+  const urls = req.files.map((file) => file.path);
 
   return res.status(201).json({ urls });
 }

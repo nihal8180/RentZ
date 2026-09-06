@@ -71,16 +71,6 @@ function registerProxyRoutes(app) {
       pathRewrite: restoreOriginalPath,
     })
   );
-  // Serve uploaded images through the gateway too, for a single public origin
-  app.use(
-    '/uploads',
-    publicLimiter,
-    createProxyMiddleware({
-      target: MEDIA_SERVICE_URL,
-      changeOrigin: true,
-      pathRewrite: restoreOriginalPath,
-    })
-  );
 
   // --- Location routes (public, used by search filters/autocomplete) ---
   app.use(
